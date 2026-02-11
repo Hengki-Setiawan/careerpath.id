@@ -50,6 +50,7 @@ const NAV_GROUPS = [
         items: [
             { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
             { href: '/dashboard/profile', icon: User, label: 'Profile' },
+            { href: '/', icon: Globe, label: 'Lihat Website', target: '_blank' },
         ]
     },
     {
@@ -191,6 +192,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                                     <Link
                                         key={item.href}
                                         href={item.href}
+                                        target={(item as any).target}
                                         className="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all group"
                                     >
                                         <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -211,15 +213,6 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                             <Settings className="w-5 h-5" />
                             <span className="font-medium text-sm">Settings</span>
                         </Link>
-                        <a
-                            href="/"
-                            target="_blank"
-                            className="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all group"
-                            title="Lihat Website"
-                        >
-                            <Globe className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                            <span className="font-medium text-sm">Lihat Website</span>
-                        </a>
                     </div>
                 </nav>
 
