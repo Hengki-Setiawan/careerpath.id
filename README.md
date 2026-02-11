@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CareerPath.id
 
-## Getting Started
+<p align="center">
+  <strong>🚀 Career Operating System untuk Gen Z Indonesia</strong>
+</p>
 
-First, run the development server:
+<p align="center">
+  Platform all-in-one untuk perencanaan karier, skill tracking, dan kesehatan mental.
+  <br />
+  Dirancang khusus untuk Gen Z di Makassar yang ingin sukses tanpa burnout.
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📘 Project Blueprints (Source of Truth)
+
+Dokumen-dokumen berikut adalah **acuan utama** pengembangan proyek ini. Semua AI agent dan developer wajib merujuk ke file ini:
+
+1.  **[MASTER-IMPLEMENTATION-PLAN.md](./MASTER-IMPLEMENTATION-PLAN.md)** - Grand design, roadmap fase, dan arsitektur teknis.
+2.  **[plan.md](./plan.md)** - Detail user journey, spesifikasi modul AI, dan logika bisnis.
+3.  **[plan-flowcharts.md](./plan-flowcharts.md)** - Diagram alur sistem dan visualisasi proses.
+4.  **[standard-features-plan.md](./standard-features-plan.md)** - Blueprint fitur standar aplikasi web (Admin, Security, Notification).
+5.  **[PROGRESS-LOG.md](./PROGRESS-LOG.md)** - Status pengerjaan real-time dan log perubahan.
+
+---
+
+## 🎯 Tentang CareerPath.id
+
+CareerPath.id adalah solusi inovatif untuk mengatasi tingkat pengangguran tinggi dan kecemasan (anxiety) yang dihadapi Gen Z di Makassar. Platform ini menggabungkan tiga pilar utama:
+
+1. **Career Planning** - Petakan jalur kariermu dengan AI-powered recommendations
+2. **Skill Tracking** - Lacak perkembangan skill dan dapatkan learning path yang personalized
+3. **Mental Wellness** - Jaga kesehatan mentalmu dengan mood tracker dan mindfulness exercises
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 14+ (App Router), TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Backend/DB**: Supabase (Auth, Database, Storage)
+
+## 📁 Struktur Proyek
+
+```
+careerpath-id/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── globals.css         # Global styles & design system
+│   │   ├── layout.tsx          # Root layout with Navbar & Footer
+│   │   └── page.tsx            # Landing page
+│   ├── components/
+│   │   └── layout/
+│   │       ├── Navbar.tsx      # Navigation bar
+│   │       └── Footer.tsx      # Footer
+│   ├── lib/
+│   │   └── supabase/
+│   │       ├── client.ts       # Browser-side Supabase client
+│   │       ├── server.ts       # Server-side Supabase client
+│   │       └── middleware.ts   # Auth session refresh helper
+│   └── middleware.ts           # Next.js middleware
+├── .env.local.example          # Environment variables template
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+
+- npm atau yarn
+- Akun Supabase (gratis di [supabase.com](https://supabase.com))
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone repository ini:
+   ```bash
+   git clone https://github.com/yourusername/careerpath-id.git
+   cd careerpath-id
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Setup environment variables:
+   ```bash
+   cp .env.local.example .env.local
+   ```
 
-## Deploy on Vercel
+4. Edit `.env.local` dengan kredensial Supabase kamu:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Jalankan development server:
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+6. Buka [http://localhost:3000](http://localhost:3000) di browser.
+
+## 📦 Dependencies
+
+```json
+{
+  "@supabase/supabase-js": "^2.x",
+  "@supabase/ssr": "^0.x",
+  "lucide-react": "^0.x",
+  "next": "^14.x",
+  "react": "^18.x",
+  "tailwindcss": "^4.x"
+}
+```
+
+## 🎨 Design System
+
+CareerPath.id menggunakan design system modern dengan:
+
+- **Primary Color**: Violet (#8b5cf6)
+- **Secondary Color**: Indigo (#6366f1)
+- **Gradients**: Violet to Indigo untuk elemen utama
+- **Glassmorphism**: Untuk efek modern pada Navbar
+- **Animations**: Smooth transitions dan micro-interactions
+
+## 📄 License
+
+Proyek ini adalah bagian dari Program Kreativitas Mahasiswa (PKM).
+
+---
+
+<p align="center">
+  Dibuat dengan ❤️ di Makassar
+</p>
